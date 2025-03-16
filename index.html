@@ -24,6 +24,8 @@
       import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js'
       import { getAuth } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js'
       import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js'
+      import { GoogleAuthProvider } from "firebase/auth";
+      const provider = new GoogleAuthProvider();
     
   const firebaseConfig = {
        apiKey: "AIzaSyCyaXSphRPAI3OwFMn6Ue2pcNPkWc74joo",
@@ -34,9 +36,10 @@
   appId: "1:813876877966:web:10b630e0cc33c9b2bb47df",
   measurementId: "G-ZPB97413DE"
     };
-  const app = initializeApp(firebaseConfig);
-      const auth = firebase.auth();
-      const provider = new firebase.auth.GoogleAuthProvider();
+      const app = initializeApp(firebaseConfig);
+      //var provider = new firebase.auth.GoogleAuthProvider();
+      //const auth = firebase.auth();
+      //const provider = new firebase.auth.GoogleAuthProvider();
       provider.setCustomParameters({ prompt: "select_account" });
       auth.onAuthStateChanged(
         usuarioAuth => {
