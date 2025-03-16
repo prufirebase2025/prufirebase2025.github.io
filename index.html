@@ -26,12 +26,18 @@
     </fieldset>
     <figure><img id="avatar" alt="Avatar"></figure>
     <button type="button" onclick="terminaSesión()">Terminar Sesión</button>
-    <footer>Copyright &copy; 2023 Ricardo Armando Machorro Reyes.</footer>
+    <footer>Copyright &copy; 2025 Ricardo Armando Machorro Reyes.</footer>
     <script>
       //@ts-check
       /** Conexión al sistema de autenticación de Firebase. */
       // @ts-ignore
-      const auth = firebase.auth();
+      import { initializeApp } from "firebase/app";
+      import { getAuth } from "firebase/auth";
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      // Initialize Firebase Authentication and get a reference to the service
+      const auth = getAuth(app);
       /** Tipo de autenticación de usuarios. En este caso es con Google. */
       // @ts-ignore
       const provider = new firebase.auth.GoogleAuthProvider();
